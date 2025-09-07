@@ -1,0 +1,10 @@
+# Secrets / keys
+.env
+*.key.json
+gh-actions.json
+
+# Build / cache / vendors
+node_modules
+.next
+dist
+.DS_Store

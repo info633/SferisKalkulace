@@ -1,0 +1,17 @@
+{
+  "name": "sferis-api-mvp",
+  "version": "0.1.0",
+  "description": "SFERIS Kalkul\u00e1tor PRO v2 \u2013 Node.js/Express API (MVP) for saving calculations, admin pricebooks, and Make export.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "NODE_ENV=development node index.js",
+    "seed": "node seed.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.6.0"
+  }
+}

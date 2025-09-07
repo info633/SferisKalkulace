@@ -1,0 +1,95 @@
+{
+  "version": "2025.2",
+  "compositions": [
+    {
+      "id": "FACADE_EPS_140_SIL",
+      "bimCode": "SN.4153A.ETICS.EPS140",
+      "measureKey": "FACADE",
+      "name": "ETICS EPS 140 mm + silikonová omítka",
+      "description": "Kontaktní zateplení fasády EPS 140 mm",
+      "layers": [
+        {
+          "name": "Lepidlo",
+          "material": "Cementové",
+          "thickness_mm": 5
+        },
+        {
+          "name": "Izolant",
+          "material": "EPS 70F",
+          "thickness_mm": 140,
+          "lambda_W_mK": 0.039
+        },
+        {
+          "name": "Stěrka+síťovina",
+          "material": "Cementové",
+          "thickness_mm": 5
+        },
+        {
+          "name": "Omítka",
+          "material": "Silikonová 1.5mm",
+          "thickness_mm": 1.5
+        }
+      ],
+      "U_W_m2K": 0.24,
+      "vaporOpen": false,
+      "price": {
+        "materialCZK_m2": 780,
+        "laborCZK_m2": 620
+      },
+      "eligibility": {
+        "minProgram": [
+          "OPRAV_DUM",
+          "NZU_LIGHT"
+        ],
+        "minU_W_m2K": 0.3
+      }
+    },
+    {
+      "id": "ATTIC_BLOWN_WOOL_300",
+      "bimCode": "ATTIC.BLOWN.WOOL.300",
+      "measureKey": "ATTIC",
+      "name": "Foukaná MW 300 mm (strop k půdě)",
+      "description": "Zateplení vodorovného stropu k nevytápěné půdě",
+      "layers": [
+        {
+          "name": "Foukaná MW",
+          "material": "MW",
+          "thickness_mm": 300,
+          "lambda_W_mK": 0.038
+        }
+      ],
+      "U_W_m2K": 0.16,
+      "price": {
+        "materialCZK_m2": 380,
+        "laborCZK_m2": 250
+      },
+      "eligibility": {
+        "minProgram": [
+          "OPRAV_DUM",
+          "NZU_LIGHT"
+        ],
+        "minU_W_m2K": 0.3
+      }
+    },
+    {
+      "id": "WINDOWS_PVC_TRIPLE_UW085",
+      "bimCode": "WINDOW.PVC.TRIPLE.Uw0.85",
+      "measureKey": "WINDOWS",
+      "name": "Okna PVC trojsklo Uw 0.85",
+      "description": "Plastová okna, Uw ≤ 0.90 W/m²K",
+      "layers": [],
+      "U_W_m2K": 0.85,
+      "price": {
+        "materialCZK_m2": 4200,
+        "laborCZK_m2": 2300
+      },
+      "eligibility": {
+        "minProgram": [
+          "OPRAV_DUM",
+          "NZU_LIGHT"
+        ],
+        "windows_Uw_max": 0.9
+      }
+    }
+  ]
+}
