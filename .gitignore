@@ -1,0 +1,3 @@
+gh-actions.json
+*.key.json
+.env
