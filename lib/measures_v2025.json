@@ -1,0 +1,176 @@
+{
+  "version": "2025.1",
+  "measures": [
+    {
+      "key": "FACADE",
+      "label": "Zateplení obvodových stěn",
+      "unit": "m2",
+      "programs": [
+        "OPRAV_DUM",
+        "NZU_LIGHT"
+      ]
+    },
+    {
+      "key": "ROOF",
+      "label": "Zateplení střechy / stropu pod nevytápěným prostorem",
+      "unit": "m2",
+      "programs": [
+        "OPRAV_DUM",
+        "NZU_LIGHT"
+      ]
+    },
+    {
+      "key": "FLOOR",
+      "label": "Zateplení konstrukcí k terénu (podlaha/sokl)",
+      "unit": "m2",
+      "programs": [
+        "OPRAV_DUM",
+        "NZU_LIGHT"
+      ]
+    },
+    {
+      "key": "ATTIC",
+      "label": "Zateplení stropu k půdě (nevytápěné)",
+      "unit": "m2",
+      "programs": [
+        "OPRAV_DUM",
+        "NZU_LIGHT"
+      ]
+    },
+    {
+      "key": "WINDOWS",
+      "label": "Výměna oken (prosklená plocha)",
+      "unit": "m2",
+      "programs": [
+        "OPRAV_DUM",
+        "NZU_LIGHT"
+      ]
+    },
+    {
+      "key": "DOORS",
+      "label": "Výměna dveří (prosklená plocha)",
+      "unit": "m2",
+      "programs": [
+        "OPRAV_DUM",
+        "NZU_LIGHT"
+      ]
+    },
+    {
+      "key": "SHADING",
+      "label": "Venkovní stínění (žaluzie/rolety)",
+      "unit": "m2",
+      "programs": [
+        "OPRAV_DUM",
+        "NZU_LIGHT"
+      ]
+    },
+    {
+      "key": "HEATING_HP",
+      "label": "Nový zdroj vytápění – tepelné čerpadlo (počet)",
+      "unit": "ks",
+      "programs": [
+        "OPRAV_DUM",
+        "NZU_LIGHT"
+      ]
+    },
+    {
+      "key": "HEATING_BIO",
+      "label": "Nový zdroj vytápění – kotel na biomasu (počet)",
+      "unit": "ks",
+      "programs": [
+        "OPRAV_DUM",
+        "NZU_LIGHT"
+      ]
+    },
+    {
+      "key": "HOT_WATER_HP",
+      "label": "Ohřev TUV – tepelné čerpadlo pro TUV (počet)",
+      "unit": "ks",
+      "programs": [
+        "OPRAV_DUM",
+        "NZU_LIGHT"
+      ]
+    },
+    {
+      "key": "SOLAR_THERMAL",
+      "label": "Solární termické kolektory – plocha",
+      "unit": "m2",
+      "programs": [
+        "OPRAV_DUM",
+        "NZU_LIGHT"
+      ]
+    },
+    {
+      "key": "FVE_KWP",
+      "label": "Fotovoltaika – výkon (kWp)",
+      "unit": "kWp",
+      "programs": [
+        "OPRAV_DUM",
+        "NZU_LIGHT"
+      ]
+    },
+    {
+      "key": "FVE_BATT",
+      "label": "Fotovoltaika – baterie (kWh)",
+      "unit": "kWh",
+      "programs": [
+        "OPRAV_DUM",
+        "NZU_LIGHT"
+      ]
+    },
+    {
+      "key": "VENTILATION_HRV",
+      "label": "Větrání se zpětným ziskem tepla (rekuperace) – počet jednotek",
+      "unit": "ks",
+      "programs": [
+        "OPRAV_DUM",
+        "NZU_LIGHT"
+      ]
+    },
+    {
+      "key": "RAINWATER",
+      "label": "Využití dešťové vody (objem nádrže – informativně)",
+      "unit": "m3",
+      "programs": [
+        "OPRAV_DUM",
+        "NZU_LIGHT"
+      ]
+    },
+    {
+      "key": "GREYWATER",
+      "label": "Využití šedé vody (počet systémů)",
+      "unit": "ks",
+      "programs": [
+        "OPRAV_DUM",
+        "NZU_LIGHT"
+      ]
+    },
+    {
+      "key": "WWHR",
+      "label": "Využití tepla z odpadní vody – výměník (počet)",
+      "unit": "ks",
+      "programs": [
+        "OPRAV_DUM",
+        "NZU_LIGHT"
+      ]
+    },
+    {
+      "key": "GREEN_ROOF",
+      "label": "Zelená střecha – vegetační plocha",
+      "unit": "m2",
+      "programs": [
+        "OPRAV_DUM",
+        "NZU_LIGHT"
+      ]
+    },
+    {
+      "key": "EV_CHARGER",
+      "label": "Dobíjecí stanice pro elektromobil (počet)",
+      "unit": "ks",
+      "programs": [
+        "OPRAV_DUM",
+        "NZU_LIGHT"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Uložené kalkulace</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="auth.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" defer></script>
+  <style>
+    .list { max-width: 1100px; margin: 20px auto; }
+    .card { background:#fff; border:1px solid #ddd; border-radius:12px; padding:1rem; margin-bottom: .8rem; display:flex; justify-content:space-between; align-items:center; }
+    .card h4 { margin:0; font-size:1.05rem; }
+    .meta { color:#555; font-size:.9rem; }
+    .btn { border:none; border-radius:8px; padding:.55rem .9rem; cursor:pointer; }
+    .btn-primary { background:#7F2306; color:#fff; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>SFERIS – Uložené kalkulace</h1>
+    <p id="userEmail"></p>
+  </header>
+
+  <main class="list">
+    <div id="items"></div>
+  </main>
+
+  <script type="module">
+    import { auth } from './auth.js';
+    import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js';
+
+    const API_BASE = window.SFERIS_API_BASE || 'http://localhost:8080';
+
+    onAuthStateChanged(auth, async user => {
+      if (!user || !user.email.endsWith('@sferis.cz')) {
+        alert('Přístup jen pro @sferis.cz');
+        window.location.href = 'login.html';
+        return;
+      }
+      document.getElementById('userEmail').textContent = `Přihlášen: ${user.email}`;
+      const token = await user.getIdToken();
+      const res = await fetch(`${API_BASE}/v1/calculations?mine=1`, {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+      const data = await res.json();
+      const root = document.getElementById('items');
+      root.innerHTML = '';
+      (data.items || []).forEach(row => {
+        const el = document.createElement('div');
+        el.className = 'card';
+        el.innerHTML = \`
+          <div>
+            <h4>\${row.meta?.client?.lastName || ''} \${row.meta?.client?.firstName || ''} — \${row.schemeId}</h4>
+            <div class="meta">ID: \${row.id} · Vytvořeno: \${new Date(row.createdAt).toLocaleString('cs-CZ')}</div>
+          </div>
+          <div>
+            <button class="btn btn-primary" onclick="exportToMake('\${row.id}')"><i class="fas fa-cloud-upload-alt"></i> Export do Make</button>
+          </div>\`;
+        root.appendChild(el);
+      });
+    });
+
+    window.exportToMake = async function(id){
+      const token = await auth.currentUser.getIdToken();
+      const res = await fetch(`${API_BASE}/v1/export/make/${id}`, {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ attachments: [] })
+      });
+      const data = await res.json();
+      alert(data.ok ? 'Odesláno do Make' : 'Chyba exportu: ' + (data.error || data.status));
+    }
+  </script>
+</body>
+</html>

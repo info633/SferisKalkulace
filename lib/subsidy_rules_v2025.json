@@ -1,0 +1,363 @@
+{
+  "version": "2025.2",
+  "programs": {
+    "OPRAV_DUM": {
+      "caps": {
+        "A_total_max": 1000000,
+        "A_base_support": 50000
+      },
+      "rounding": "floor-2dec",
+      "requires": {
+        "C_requires_A": true
+      },
+      "areas": {
+        "A": [
+          {
+            "categoryKey": "FACADE_ROOF_FLOOR_EXT",
+            "unit": "m2",
+            "rateCZK": 1300,
+            "note": "stěny/střechy/podlahy nad venk. prostorem"
+          },
+          {
+            "categoryKey": "ATTIC_OTHER",
+            "unit": "m2",
+            "rateCZK": 500,
+            "note": "stropy k půdě, ostatní k nevytápěnému"
+          },
+          {
+            "categoryKey": "WINDOWS_DOORS",
+            "unit": "m2",
+            "rateCZK": 4900
+          },
+          {
+            "categoryKey": "GROUND_CONTACT",
+            "unit": "m2",
+            "rateCZK": 1700
+          },
+          {
+            "categoryKey": "SHADING",
+            "unit": "m2",
+            "rateCZK": 1500
+          }
+        ],
+        "C1": [
+          {
+            "key": "KOTEL_BIO",
+            "unit": "ks",
+            "rateCZK": 65000
+          },
+          {
+            "key": "KOTEL_BIO_PLUS",
+            "unit": "ks",
+            "rateCZK": 90000
+          },
+          {
+            "key": "KAMNA",
+            "unit": "ks",
+            "rateCZK": 35000
+          },
+          {
+            "key": "TC_A",
+            "unit": "ks",
+            "rateCZK": 40000,
+            "withDHW": 60000
+          },
+          {
+            "key": "TC_V",
+            "unit": "ks",
+            "rateCZK": 75000,
+            "withDHW": 90000
+          },
+          {
+            "key": "TC_K",
+            "unit": "ks",
+            "rateCZK": 110000,
+            "withDHW": 130000
+          },
+          {
+            "key": "CZT",
+            "unit": "ks",
+            "rateCZK": 30000
+          }
+        ],
+        "C2": [
+          {
+            "key": "SOL",
+            "unit": "ks",
+            "rateCZK": 45000
+          },
+          {
+            "key": "SOL_PLUS",
+            "unit": "ks",
+            "rateCZK": 60000
+          },
+          {
+            "key": "FV",
+            "unit": "ks",
+            "rateCZK": 35000
+          },
+          {
+            "key": "TC_DHW",
+            "unit": "ks",
+            "rateCZK": 35000
+          }
+        ],
+        "C3": {
+          "per_kWp": 10000,
+          "per_kWh": 10000,
+          "wallbox": 10000,
+          "min_kWp": 2,
+          "battery_kWh_gte_kWp": true,
+          "three_phase_required": true,
+          "max_standard": 100000,
+          "max_with_sharing_and_smart": 140000
+        },
+        "C4": [
+          {
+            "key": "VZT",
+            "unit": "ks",
+            "rateCZK": 90000
+          }
+        ],
+        "C5": [
+          {
+            "key": "WWHR_CENTRAL",
+            "unit": "ks",
+            "rateCZK": 50000
+          }
+        ],
+        "D1": [
+          {
+            "key": "GREEN_ROOF",
+            "unit": "m2",
+            "rateCZK": 800,
+            "capCZK": 100000
+          }
+        ],
+        "D2": [
+          {
+            "key": "RAINWATER",
+            "unit": "m3",
+            "baseCZK": 20000,
+            "per_m3": 3000,
+            "capCZK": 50000
+          },
+          {
+            "key": "GREYWATER",
+            "unit": "m3",
+            "baseCZK": 70000,
+            "per_m3": 3000,
+            "capCZK": 100000
+          }
+        ]
+      },
+      "bonuses": {
+        "region_percent": 5,
+        "combo": [
+          {
+            "when": "A+ C1",
+            "amountCZK": 50000
+          },
+          {
+            "when": "A+ C(any)",
+            "amountCZK": 50000,
+            "once": true
+          }
+        ],
+        "eco_points": {
+          "perPointCZK": 300,
+          "capCZK": 30000
+        },
+        "family": {
+          "perChild": 50000,
+          "sharedCare": 25000
+        }
+      }
+    },
+    "NZU_LIGHT": {
+      "caps": {
+        "A_total_max": 500000,
+        "A_low_income_max": 250000,
+        "A_minCZK": 50000
+      },
+      "rounding": "floor-2dec",
+      "areas": {
+        "A": [
+          {
+            "categoryKey": "FACADE_ROOF_FLOOR_EXT",
+            "unit": "m2",
+            "rateCZK": 700
+          },
+          {
+            "categoryKey": "ATTIC_OTHER",
+            "unit": "m2",
+            "rateCZK": 300
+          },
+          {
+            "categoryKey": "WINDOWS_DOORS",
+            "unit": "m2",
+            "rateCZK": 2200
+          },
+          {
+            "categoryKey": "GROUND_CONTACT",
+            "unit": "m2",
+            "rateCZK": 800
+          },
+          {
+            "categoryKey": "SHADING",
+            "unit": "m2",
+            "rateCZK": 1500
+          },
+          {
+            "categoryKey": "FACADE_ROOF_FLOOR_EXT_LOW",
+            "unit": "m2",
+            "rateCZK": 1500
+          },
+          {
+            "categoryKey": "ATTIC_OTHER_LOW",
+            "unit": "m2",
+            "rateCZK": 750
+          },
+          {
+            "categoryKey": "WINDOWS_DOORS_LOW",
+            "unit": "m2",
+            "rateCZK": 5500
+          },
+          {
+            "categoryKey": "GROUND_CONTACT_LOW",
+            "unit": "m2",
+            "rateCZK": 2000
+          }
+        ],
+        "C1": [
+          {
+            "key": "KOTEL_BIO",
+            "unit": "ks",
+            "rateCZK": 65000
+          },
+          {
+            "key": "KOTEL_BIO_PLUS",
+            "unit": "ks",
+            "rateCZK": 90000
+          },
+          {
+            "key": "KAMNA",
+            "unit": "ks",
+            "rateCZK": 35000
+          },
+          {
+            "key": "TC_A",
+            "unit": "ks",
+            "rateCZK": 40000,
+            "withDHW": 60000
+          },
+          {
+            "key": "TC_V",
+            "unit": "ks",
+            "rateCZK": 75000,
+            "withDHW": 90000
+          },
+          {
+            "key": "TC_K",
+            "unit": "ks",
+            "rateCZK": 110000,
+            "withDHW": 130000
+          },
+          {
+            "key": "CZT",
+            "unit": "ks",
+            "rateCZK": 30000
+          }
+        ],
+        "C2": [
+          {
+            "key": "SOL",
+            "unit": "ks",
+            "rateCZK": 45000
+          },
+          {
+            "key": "SOL_PLUS",
+            "unit": "ks",
+            "rateCZK": 60000
+          },
+          {
+            "key": "FV",
+            "unit": "ks",
+            "rateCZK": 35000
+          },
+          {
+            "key": "TC_DHW",
+            "unit": "ks",
+            "rateCZK": 35000
+          }
+        ],
+        "C3": {
+          "per_kWp": 10000,
+          "per_kWh": 10000,
+          "wallbox": 10000,
+          "min_kWp": 2,
+          "battery_kWh_gte_kWp": true,
+          "three_phase_required": true,
+          "max_standard": 100000,
+          "max_with_sharing_and_smart": 140000
+        },
+        "C4": [
+          {
+            "key": "VZT",
+            "unit": "ks",
+            "rateCZK": 90000
+          }
+        ],
+        "C5": [
+          {
+            "key": "WWHR_CENTRAL",
+            "unit": "ks",
+            "rateCZK": 50000
+          }
+        ],
+        "D1": [
+          {
+            "key": "GREEN_ROOF",
+            "unit": "m2",
+            "rateCZK": 800,
+            "capCZK": 100000
+          }
+        ],
+        "D2": [
+          {
+            "key": "RAINWATER",
+            "unit": "m3",
+            "baseCZK": 20000,
+            "per_m3": 3000,
+            "capCZK": 50000
+          },
+          {
+            "key": "GREYWATER",
+            "unit": "m3",
+            "baseCZK": 70000,
+            "per_m3": 3000,
+            "capCZK": 100000
+          }
+        ]
+      },
+      "bonuses": {
+        "region_percent": 5,
+        "combo": [
+          {
+            "when": "A+ C1",
+            "amountCZK": 30000
+          },
+          {
+            "when": "A+ C(any)",
+            "amountCZK": 30000,
+            "once": true
+          }
+        ],
+        "eco_points": {
+          "perPointCZK": 300,
+          "capCZK": 30000
+        }
+      }
+    }
+  }
+}
